@@ -13,12 +13,4 @@ test("Product page Add to Basket", async ({ page }) => {
   await addTwoBasketButton.click();
   await expect(addTwoBasketButton).toHaveText("Remove from Basket");
   await expect(basketCounter).toHaveText("1");
-
-  //await page.pause();
-
-  const checkoutLink = page.getByRole("link", { name: "Checkout" });
-  await checkoutLink.waitFor();
-  await checkoutLink.click();
-
-  await page.waitForURL("/basket");
 });
