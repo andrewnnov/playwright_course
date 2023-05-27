@@ -1,0 +1,6 @@
+import { test } from "@playwright/test";
+
+test("Product page Add to Basket", async ({ page }) => {
+  await page.goto("localhost:2221");
+  await page.pause();
+});
