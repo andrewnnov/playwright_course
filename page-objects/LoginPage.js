@@ -7,6 +7,7 @@ export class LoginPage {
   moveToSignup = async () => {
     await this.moveToSignupButton.waitFor();
     await this.moveToSignupButton.click();
-    this.page.waitForURL(/\/signup/, { timeout: 3000 });
+    this.page.waitForURL(/\/signup/, { timeout: 30000 });
+    await this.page.pause();
   };
 }
