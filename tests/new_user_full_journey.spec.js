@@ -6,6 +6,7 @@ import { Checkout } from "../page-objects/Checkout";
 test.only("New user full end-to-end test journey", async ({ page }) => {
   const productPage = new ProductsPage(page);
   await productPage.visit();
+  await productPage.sortByCheapest();
   await productPage.addProductToBasket(0);
   await productPage.addProductToBasket(1);
   await productPage.addProductToBasket(2);
