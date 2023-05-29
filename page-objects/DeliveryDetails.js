@@ -27,6 +27,9 @@ export class DeliveryDetails {
     );
     this.saveAddressCity = page.locator('[data-qa="saved-address-city"]');
     this.saveAddressCountry = page.locator('[data-qa="saved-address-country"]');
+    this.continueToPaymentButton = page.getByRole("button", {
+      name: "Continue to payment",
+    });
   }
 
   fillDetails = async (userAddress) => {
@@ -88,5 +91,12 @@ export class DeliveryDetails {
     );
 
     //await this.page.pause();
+  };
+
+  continueToPayment = async () => {
+    await this.continueToPaymentButton.waitFor();
+    await this.continueToPaymentButton.click();
+    await this.page.waitForURL(/\/payment/, { timeout: 3000 });
+    await this.page.pause();
   };
 }
