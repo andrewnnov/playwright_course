@@ -10,7 +10,7 @@ import { deliveryDetails as userAddress } from "../data/deliveryDetails";
 import { PaymentPage } from "../page-objects/PaymentPage";
 import { paymentDetails } from "../data/paymentDetails";
 
-test.only("New user full end-to-end test journey", async ({ page }) => {
+test("New user full end-to-end test journey", async ({ page }) => {
   const productPage = new ProductsPage(page);
   await productPage.visit();
   await productPage.sortByCheapest();
