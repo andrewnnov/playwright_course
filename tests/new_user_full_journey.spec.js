@@ -18,6 +18,8 @@ test.only("New user full end-to-end test journey", async ({ page }) => {
   await productPage.addProductToBasket(1);
   await productPage.addProductToBasket(2);
 
+  this.page.pause();
+
   const navigation = new Navigation(page);
   await navigation.goToCheckOut();
 
