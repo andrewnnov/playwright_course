@@ -10,4 +10,14 @@ test.only("My account using cookie injection", async ({ page }) => {
   //inject the login token into the browser
   const myAccount = new MyAccountPage(page);
   await myAccount.visit();
+
+  await page.evaluate(
+    ([loginTokenInsideBrowsecode]) => {
+      document.cookie = "token=" + loginTokenInsideBrowsecode;
+    },
+    [loginToken]
+  );
+
+  await myAccount.visit();
+  await myAccount.waitForPageHeading();
 });
