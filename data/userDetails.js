@@ -1,4 +1,4 @@
 export const adminDetalis = {
   username: "admin",
-  password: "Admin123",
+  password: process.env.ADMIN_PASSWORD,
 };
