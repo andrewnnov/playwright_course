@@ -3,7 +3,7 @@ import { MyAccountPage } from "../page-objects/MyAccountPage";
 import { getLoginToken } from "../api-calls/getLoginToken";
 import { adminDetalis } from "../data/userDetails";
 
-test.only("My account using cookie injection and mocking network request", async ({
+test("My account using cookie injection and mocking network request", async ({
   page,
 }) => {
   //make a request to get login token

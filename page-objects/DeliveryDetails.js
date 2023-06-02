@@ -89,14 +89,11 @@ export class DeliveryDetails {
     expect(await this.saveAddressCountry.first().innerText()).toBe(
       await this.countryDropdown.inputValue()
     );
-
-    //await this.page.pause();
   };
 
   continueToPayment = async () => {
     await this.continueToPaymentButton.waitFor();
     await this.continueToPaymentButton.click();
     await this.page.waitForURL(/\/payment/, { timeout: 3000 });
-    //await this.page.pause();
   };
 }
